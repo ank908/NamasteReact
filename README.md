@@ -1,2 +1,1 @@
-# NamasteReact
-Learning ReactJS
+🚀 Namaste React
