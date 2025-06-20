@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
     <link rel="stylesheet" href="./index.css">
-      <script  crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>  <!-- Core React -->
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> <!-- React DOM -->
-
-    
+     
 </head>
 <body>
     <h2>React replace not apend</h2>
-    <div id = "root">
-        <h1>Already Here</h1>
+    <div id = "root" class="root">
+        <h1>Not Rendered</h1>
         </div>
     <h2>Other tags are not affected</h2>
     <!-- <script>
@@ -22,7 +19,17 @@
         var root = document.getElementById('root');
         root.appendChild(heading);
     </script> -->
-   <script src="./App.js"></script>
+
+    
+     <!-- Not a preferred way to include React in production -->
+    
+     <!--
+    <script  crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>  //Core React
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> //React DOM
+     -->
+
+    <!-- module is to tell the browser that this is a module not a browser script -->
+   <script type="module" src="./App.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,33 @@
+{
+  "name": "inception",
+  "version": "1.0.0",
+  "description": "This is ReactJS First App",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ank908/NamasteReact.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Ankur Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ank908/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/ank908/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist" : [
+    "last 2 versions"
+  ]
+}
