@@ -1,0 +1,29 @@
+{
+  "name": "fooddeliveryapp",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --public-url ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ank908/NamasteReact.git"
+  },
+  "keywords": [
+    "swiggy",
+    "food delivery",
+    "react",
+    "parcel"
+  ],
+  "author": "Ankur Kumar",
+  "license": "ISC",
+  "description": "This is a food delivery app built with React and Parcel. It allows users to browse restaurants, view menus, and place orders.",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
