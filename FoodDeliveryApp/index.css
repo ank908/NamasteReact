@@ -7,7 +7,7 @@
 .logo {
   width: 100px;
   height: 50px;
-  border-radius: 30px;
+  border-radius: 16px;
   padding: 10px;
   margin: 10px;
 }
@@ -27,11 +27,27 @@
   margin: 10px;
 }
 
+.nav-items > ul > li > a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+.nav-items > ul > li > a:hover {
+  color: rgb(216, 102, 9);
+  cursor: pointer;
+}
+
 .login {
   background: white;
   border: 0px;
   cursor: pointer;
   padding: 0 20px;
+  font-size: large;
+}
+
+.login:hover {
+  color: rgb(216, 102, 9);
 }
 
 .login:hover {
@@ -42,18 +58,26 @@
   padding: 10px;
 }
 
+.restaurant-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
 .restaurant-card {
-  height: 400px;
-  width: 290px;
-  padding: 2px;
-  margin: 10px;
+  height: 286px;
+  width: 274px;
+  padding: 0px 16px;
+  margin: 20px 0px;
   border-radius: 5px;
+  transition: transform 0.3s ease;
 }
 
 .restaurant-card:hover {
-  border: solid 1px rgb(0, 162, 255);
-  box-shadow: 0px 0px 10px rgba(30, 44, 150, 1);
+  /* border: solid 1px rgb(0, 162, 255);
+  box-shadow: 0px 0px 10px rgba(30, 44, 150, 1); */
   cursor: pointer;
+  transform: scale(0.9);
 }
 
 .restaurant-logo {
@@ -65,6 +89,54 @@
 .restaurant-container {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 5%;
+  font-size: large;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.row1 > * {
+  display: inline;
+}
+.rating-icon {
+  padding-top: 10px;
+  vertical-align: bottom;
+}
+.rating-score {
+  margin: 2px 0px 0px 2px;
+}
+.time {
+  font-weight: 500;
+  margin: 2px;
+}
+
+.cuisine {
+  color: rgba(2, 6, 12, 0.6);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
+}
+
+.location {
+  width: 50%;
+}
+
+.cost {
+  width: 50%;
+  text-align: right;
+}
+
+.row2 {
+  color: rgba(2, 6, 12, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .filter-btn {
@@ -131,6 +203,77 @@
 .shimmer-card {
   margin: 10px;
   background: #ebecee;
-  height: 400px;
-  width: 290px;
+  height: 280px;
+  width: 270px;
 }
+
+.chipContainer {
+  margin: 5px;
+  padding: 2px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  /* gap: 10px; */
+  padding: 10px;
+  background: #d7dce2;
+  border-radius: 20px;
+  margin: 5px;
+  display: inline;
+}
+
+.chipClear {
+  border: none;
+  color: red;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* About Secion */
+.aboutImage {
+  border-radius: 50%;
+  height: 100px;
+  weight: 100px;
+}
+
+.online {
+  margin: 5px 0;
+  padding: 0;
+  height: 10px;
+  background-color: green;
+  width: 10px;
+  border: 2px solid green;
+  border-radius: 50%;
+  /* display: inline; */
+}
+
+.offline {
+  margin: 5px 0;
+  padding: 0;
+  height: 10px;
+  background-color: red;
+  width: 20px;
+  border: 2px solid red;
+  border-radius: 50%;
+  /* display: inline; */
+}
+
+/* .status {
+  height: 30px;
+  width: 10px;
+} */

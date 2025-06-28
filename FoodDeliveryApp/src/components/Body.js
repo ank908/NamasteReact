@@ -2,7 +2,9 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 import { DOMINOS_IMG_URL, SWIGGY_DATA_API_URL } from "../utils/constant";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 const Body = () => {
   //React Hooks(Normal JS utility functions imported from react)
@@ -62,7 +64,22 @@ const Body = () => {
 
     // Fetching data from an API
     fetchData();
+
+    const timer = setInterval(() => {
+      console.log("Interval");
+    }, 1000);
+
+    //Called for Unmounting
+    return () => {
+      clearInterval(timer);
+      console.log("Body Unmounted");
+    };
   }, []); // Empty dependency array means this effect runs only once after the initial render
+
+  //2nd time if want to write seperate logic
+  // useEffect(() => {
+  //   console.log("useEffect called");
+  // }, [listOfRestaurants]);
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_DATA_API_URL);
@@ -90,6 +107,12 @@ const Body = () => {
   // );
   //     return <Shimmer />; // Show shimmer effect while data is being fetched
   //   }
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus == false) {
+    return <h1>Looks like You're offline.</h1>;
+  }
 
   console.log("Body rendered");
 
@@ -148,10 +171,13 @@ const Body = () => {
       <div className="restaurant-container">
         {filteredListOfRestaurants.map((restaurant, index) => (
           // Using index as key is not recommended in production, but okay for this example
-          <RestaurantCard
+          <Link
+            className="restaurant-link "
+            to={"/restaurants/" + restaurant.info.id}
             key={index /*restaurant.info.id*/}
-            data={restaurant}
-          />
+          >
+            <RestaurantCard data={restaurant} />
+          </Link>
         ))}
         {/* <RestaurantCard
           data={resList[0]}
