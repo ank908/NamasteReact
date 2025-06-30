@@ -120,55 +120,61 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <input
-          type="text"
-          placeholder="Search for restaurants"
-          className="search-input"
-          value={searchText}
-          onChange={(e) => {
-            // Update searchText state variable
-            setSearchText(e.target.value);
-            console.log(e.target.value);
-          }}
-        ></input>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            // Filter restaurants based on a condition
-            console.log(searchText);
-            filteredListOfRestaurants = listOfRestaurants.filter(
-              (restaurant) => {
-                // Check if the restaurant name includes the search text
-                return restaurant.info.name
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase());
-              }
-            );
+      <div className="filter flex justify-center">
+        <div className="mt-4 mx-4 shadow-lg">
+          <button
+            className="filter-btn p-2 rounded-lg bg-gray-200 hover:cursor-pointer"
+            onMouseOver={() => console.log("Mouse hovered")}
+            onClick={() => {
+              filteredListOfRestaurants = listOfRestaurants.filter(
+                (restaurant) => {
+                  return restaurant.info.avgRating > 4.4;
+                }
+              );
+              setFilteredListOfRestaurants(filteredListOfRestaurants);
+              console.log(filteredListOfRestaurants);
+            }}
+          >
+            Top Rated
+          </button>
+        </div>
+        <div className="w-52 mt-5">
+          <input
+            type="text"
+            placeholder="Search for restaurants"
+            className="search-input border rounded-md p-1"
+            value={searchText}
+            onChange={(e) => {
+              // Update searchText state variable
+              setSearchText(e.target.value);
+              console.log(e.target.value);
+            }}
+          ></input>
+        </div>
+        <div className="mt-4">
+          <button
+            className="filter-btn rounded-lg p-2 shadow-lg bg-green-100 hover:cursor-pointer"
+            onClick={() => {
+              // Filter restaurants based on a condition
+              console.log(searchText);
+              filteredListOfRestaurants = listOfRestaurants.filter(
+                (restaurant) => {
+                  // Check if the restaurant name includes the search text
+                  return restaurant.info.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase());
+                }
+              );
 
-            setFilteredListOfRestaurants(filteredListOfRestaurants);
-          }}
-        >
-          Search
-        </button>
-        <button
-          className="filter-btn"
-          onMouseOver={() => console.log("Mouse hovered")}
-          onClick={() => {
-            filteredListOfRestaurants = listOfRestaurants.filter(
-              (restaurant) => {
-                return restaurant.info.avgRating > 4.4;
-              }
-            );
-            setFilteredListOfRestaurants(filteredListOfRestaurants);
-            console.log(filteredListOfRestaurants);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+              setFilteredListOfRestaurants(filteredListOfRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
       </div>
 
-      <div className="restaurant-container">
+      <div className="restaurant-container flex flex-wrap mx-16">
         {filteredListOfRestaurants.map((restaurant, index) => (
           // Using index as key is not recommended in production, but okay for this example
           <Link

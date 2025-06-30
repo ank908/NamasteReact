@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer flex justify-center">
       <p>&copy; 2025 My Foodie</p>
     </footer>
   );

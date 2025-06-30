@@ -27,14 +27,21 @@ const RestaurantCard = (props) => {
 
   return (
     // {{ backgroundColor: "#f0f0f0"}}
-    <div /*style={styleCard}*/ className="restaurant-card">
-      <img
-        className="restaurant-logo"
-        src={CDN_URL + cloudinaryImageId}
-        alt="Restaurant Logo"
-      />
-      <div className="name">{name}</div>
-      <div className="row1">
+    <div
+      /*style={styleCard}*/ className="restaurant-card m-4 w-[286px] rounded-lg hover:bg-gray-100 hover:scale-95 transition-transform duration-100"
+    >
+      <div className="aspect-w-16 aspect-h-9">
+        <img
+          className="restaurant-logo rounded-lg w-full h-48 object-cover"
+          src={CDN_URL + cloudinaryImageId}
+          alt="Restaurant Logo"
+        />
+      </div>
+
+      <div className="name text-lg font-bold py-2 overflow-hidden text-ellipsis line-clamp-1 break-words">
+        {name}
+      </div>
+      <div className="row1 flex flex-wrap pb-2">
         <div className="rating-icon">
           <svg
             width="20"
@@ -70,11 +77,13 @@ const RestaurantCard = (props) => {
             </defs>
           </svg>
         </div>
-        <div className="rating-score">{avgRating}</div>
+        <div className="rating-score px-1">{avgRating}</div>
         <div className="time"> • {sla.deliveryTime} mins</div>
       </div>
-      <div className="cuisine">{cuisines.join(", ")}</div>
-      <div className="row2">
+      <div className="cuisine text-[rgba(2,6,12,0.6)] overflow-hidden text-ellipsis line-clamp-1 break-words">
+        {cuisines.join(", ")}
+      </div>
+      <div className="row2 flex flex-wrap justify-between text-[rgba(2,6,12,0.6)]">
         <div className="location">
           <div>{areaName}</div>
         </div>

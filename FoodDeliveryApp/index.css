@@ -1,7 +1,8 @@
-.header {
+@import "tailwindcss";
+
+/*.header {
   display: flex;
   justify-content: space-between;
-  /* border: solid 1px black; */
 }
 
 .logo {
@@ -74,8 +75,6 @@
 }
 
 .restaurant-card:hover {
-  /* border: solid 1px rgb(0, 162, 255);
-  box-shadow: 0px 0px 10px rgba(30, 44, 150, 1); */
   cursor: pointer;
   transform: scale(0.9);
 }
@@ -142,7 +141,7 @@
 .filter-btn {
   margin: 10px;
   cursor: pointer;
-}
+}*/
 
 .wrapper {
   display: flex;
@@ -190,7 +189,7 @@
     transform: translateY(10px);
   }
 }
-
+/*
 .body {
   margin: 0;
   padding: 0;
@@ -215,7 +214,6 @@
 }
 
 .chip {
-  /* gap: 10px; */
   padding: 10px;
   background: #d7dce2;
   border-radius: 20px;
@@ -244,7 +242,7 @@
   border: 1px solid black;
 }
 
-/* About Secion */
+
 .aboutImage {
   border-radius: 50%;
   height: 100px;
@@ -259,7 +257,7 @@
   width: 10px;
   border: 2px solid green;
   border-radius: 50%;
-  /* display: inline; */
+  
 }
 
 .offline {
@@ -270,8 +268,8 @@
   width: 20px;
   border: 2px solid red;
   border-radius: 50%;
-  /* display: inline; */
-}
+  
+}*/
 
 /* .status {
   height: 30px;
